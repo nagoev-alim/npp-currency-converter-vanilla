@@ -1,0 +1,106 @@
+@import "assets/scss/config/fonts";
+@import "assets/scss/config/reset";
+@import "assets/scss/config/vars";
+@import "assets/scss/config/utility";
+@import "assets/scss/modules/typography";
+@import "assets/scss/modules/fields";
+@import "assets/scss/modules/buttons";
+@import "assets/scss/modules/toast";
+@import "assets/scss/config/global";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.app-author {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  --gap: 15px;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bcs-grey-4);
+  padding: 10px;
+}
+
+.currency-converter {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 0 25px 35px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  text-align: center;
+  display: grid;
+  gap: var(--gap);
+
+  form {
+    gap: var(--gap);
+
+    .directions {
+      display: grid;
+      gap: var(--gap);
+      grid-template-columns: 1fr 30px 1fr;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 25px;
+        cursor: pointer;
+
+        svg {
+          pointer-events: none;
+        }
+      }
+
+      .select {
+        display: flex;
+        position: relative;
+        padding: 0;
+
+        img {
+          width: 28px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 12px;
+        }
+
+        select {
+          border: none;
+          width: 100%;
+          padding-left: 50px;
+        }
+      }
+    }
+
+    .exchange {
+      table {
+        border: 1px solid var(--fld-c-primary);
+        width: 100%;
+
+        tr:not(:last-child) {
+          border-bottom: 1px solid var(--fld-c-primary);
+        }
+
+        td {
+          padding: 12px;
+          background-color: var(--bcs-grey-4);
+
+          &:nth-child(1) {
+            border-right: 1px solid var(--fld-c-primary);
+          }
+        }
+      }
+
+      span {
+        font-weight: var(--fw-600);
+      }
+    }
+  }
+}
